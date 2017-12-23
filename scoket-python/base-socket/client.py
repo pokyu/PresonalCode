@@ -15,11 +15,15 @@ tcpCliSock = socket(AF_INET, SOCK_STREAM)  # 生成客户端的套接字，并�
 tcpCliSock.connect(ADDR)
 while True:
     data = raw_input('>>>')
-    print "send"
-    tcpCliSock.send('[%s] %s' % (ctime(), data))  # 发送时间与数据
-    print "begin recv..."
+    #print "send"
+    tcpCliSock.send (data)
+    if data == "exit":
+        tcpCliSock.close()
+        break
+    #tcpCliSock.send('[%s] %s' % (ctime(), data))  # 发送时间与数据
+    #print "begin recv..."
     data = tcpCliSock.recv(BUFSIZ)
-    print "recv over..."
+    #print "recv over..."
     if not data:
         break
     print data
