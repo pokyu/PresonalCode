@@ -1,6 +1,23 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
 
+##########################################################################################
+# - Copyright(C), 2017-2020, Pokyu Tung
+# - File name: hdfs_reblance.sh
+# - Author: Pokyu Tung    Version: 1.0    Date: 2017-12-23
+# - Description: //用于详细说明程序文件完成的主要功能，与其它模块或函接口，输出值，取值范
+#				   围，含意及参数间的控制、顺序、独立或依赖等关系
+# - Others: 
+# - Function List: //主要函数列表，每条记录应包括函数名及功能简要说明
+#   - 1. ...
+#   - 2. ... 
+# - History: 
+#   - 1. Date: ...
+#        Author: ...
+#        Modification: ...
+#   - 2. ...
+##########################################################################################
+
 from socket import *
 from time import ctime
 import select

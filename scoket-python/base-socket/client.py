@@ -6,10 +6,13 @@ import select
 import sys
 
 #HOST = '192.168.1.200'
-HOST = '127.0.0.1'
-PORT = 8888
+#HOST = '127.0.0.1'
+HOST = '207.246.113.233'
+PORT = 8080
 BUFSIZ = 1024
 ADDR = (HOST, PORT)  # 服务器的地址与端口
+
+#HOST = raw_input("Please input host's ip : ")
 
 tcpCliSock = socket(AF_INET, SOCK_STREAM)  # 生成客户端的套接字，并连上服务器
 tcpCliSock.connect(ADDR)
