@@ -1,4 +1,5 @@
 {% extends "base.html" %}/span>
+{% load static %}
 {% block content %}
 
     <!-- Page Content -->
@@ -6,18 +7,18 @@
 
       <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">Services
-        <small>Subheading</small>
+        <small>副标题，此页程序统一入口</small>
       </h1>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
+          <a href="/index">Home</a>
         </li>
         <li class="breadcrumb-item active">Services</li>
       </ol>
 
       <!-- Image Header -->
-      <img class="img-fluid rounded mb-4" src="http://placehold.it/1200x300" alt="">
+      <img class="img-fluid rounded mb-4" src="{% static 'image/services_header_1200x300.jpg' %}" alt="">
 
       <!-- Marketing Icons Section -->
       <div class="row">
